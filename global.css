@@ -1,0 +1,32 @@
+body {
+    overflow: hidden;
+}
+
+.container {
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 1rem;
+}
+
+input {
+    margin-bottom: 1rem;
+    width: 300px;
+}
+
+.error {
+    color: red;
+}
+
+.bottom-div {
+    margin-top: 1.5rem;
+}
+
+.bottom-div > a {
+    margin-left: 0.5rem;
+    text-decoration: underline;
+}
