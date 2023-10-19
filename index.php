@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
     <link rel="stylesheet" href="global.css">
     <title>Signup</title>
@@ -19,7 +20,6 @@
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username">
                 <?php if (isset($errors['username'])) { echo '<p class="error">' . $errors['username'] . '</p>'; } ?>
-                <?php if (isset($errors['usernameregex'])) { echo '<p class="error">' . $errors['usernameregex'] . '</p>'; } ?>
                 <?php if (isset($errors['usernamelength'])) { echo '<p class="error">' . $errors['usernamelength'] . '</p>'; } ?>
                 <?php if (isset($errors['usernameduplicate'])) { echo '<p class="error">' . $errors['usernameduplicate'] . '</p>'; } ?>
             </div>
@@ -36,6 +36,7 @@
                 <?php if (isset($errors['passwordmatch'])) { echo '<p class="error">' . $errors['passwordmatch'] . '</p>'; } ?>
             </div>
 
+            <button type="button" id="show-password"><i class="fa-solid fa-eye" id="eye"></i>Password</button>
             <button type="submit">Signup</button>
 
             <div class="bottom-div">
@@ -44,6 +45,22 @@
             </div>
         </form>
     </div>
+
+    <script>
+        const showPassword =  document.getElementById('show-password');
+        const password = document.getElementById('password');
+        const cpassword = document.getElementById('cpassword');
+
+        showPassword.addEventListener('click', function() {
+            if(password.type === 'password' && cpassword.type === 'password') {
+                password.type = 'text';
+                cpassword.type = 'text';
+            } else {
+                password.type = 'password';
+                cpassword.type = 'password';
+            }
+        })
+    </script>
 
 </body>
 </html>
