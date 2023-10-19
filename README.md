@@ -11,4 +11,5 @@ I've been learning PHP recently as I want to use it for industry standard form v
 * JavaScript
 
 ## Screenshots
-<img src="https://github.com/maxxjonesyy/login_signup/assets/73814371/513e0fba-c53f-489a-b6d5-d449f2d663d6" width="550px">
+<img src="https://github.com/maxxjonesyy/login_signup/assets/73814371/7df93abd-1937-4918-a73b-d96ad24341c4" width="550px">
+
