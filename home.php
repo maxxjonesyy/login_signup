@@ -17,6 +17,7 @@ if (isset($_SESSION['logged_in'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
     <link rel="stylesheet" href="global.css">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
     <title>Home</title>
 </head>
 <body>
