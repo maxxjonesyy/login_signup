@@ -9,17 +9,28 @@ body {
     align-items: center;
 }
 
+.container-inner {
+    text-align: center;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+}
+
 h1 {
     margin-bottom: 1rem;
 }
 
 input {
     margin-bottom: 1rem;
-    width: 300px;
+    width: 280px;
 }
 
 .error {
     color: red;
+}
+
+.success {
+    color: green;
+    text-decoration: underline;
 }
 
 .bottom-div {
@@ -29,4 +40,8 @@ input {
 .bottom-div > a {
     margin-left: 0.5rem;
     text-decoration: underline;
+}
+
+.fa-solid {
+    padding-right: 10px;
 }
