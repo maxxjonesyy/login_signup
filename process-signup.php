@@ -16,23 +16,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $cpassword = $_POST['cpassword'];
 
     if (empty($username)) {
-        $errors['username'] = 'Username is required';
-    }
-    
-    if (!preg_match("/^[a-zA-Z0-9_]+$/", $username)) {
-        $errors['usernameregex'] = 'Usernames can only contain letters, numbers, and underscores';
+        $errors['username'] = '* Username is required';
     }
         
     if (strlen($username) > 24) {
-        $errors['usernamelength'] = 'Username must be less than 24 characters';
+        $errors['usernamelength'] = '* Username must be less than 24 characters';
     }
         
     if (strlen($password < 8)) {
-        $errors['passwordlength'] = 'Password must have atleast 8 characters';
+        $errors['passwordlength'] = '* Password must have atleast 8 characters';
     }
         
     if ($password !== $cpassword) {
-        $errors['passwordmatch'] = 'Passwords must match';
+        $errors['passwordmatch'] = '* Passwords must match';
     }
 }
 
@@ -45,9 +41,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && empty($errors)) {
 
     try {
         $stmt->execute();
+        $_SESSION['success_message'] = "Your account has been created";
+        header('Location: login.php');
     } catch (PDOException $e) {
         if ($e->errorInfo[0] ==='23000') {
-            $errors['usernameduplicate'] = 'Username is already in use';
+            $errors['usernameduplicate'] = '* Username is already in use';
         } else {
             echo 'Error:' . $e->getMessage();
         }
